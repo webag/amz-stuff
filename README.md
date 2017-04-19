@@ -1,3 +1,3 @@
-# amz-keyword
+# amz-stuff
 Демо:
 https://webag.github.io/amz-stuff/
