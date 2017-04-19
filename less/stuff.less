@@ -2,3 +2,159 @@
 	margin: 0;
 	padding: 0;
 }
+
+body {
+	font-family: 'Open Sans',sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #4b6373;
+	background-color: #fff;
+}
+
+
+//indicator
+.ind{
+	display: inline-block;
+	position: relative;
+
+	&__num{
+		cursor: pointer;
+		font-weight: bold;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 1;
+		padding: 6px 0;
+		background-color: #666;
+		color: #FFF;
+		border-radius: 4px;
+		width: 50px;
+		text-align: center;
+
+		&--green{
+			background-color: #31c336;
+		}
+		&--yellow{
+			background-color: #cdbc01;
+		}
+		&--red{
+			background-color: #c73232;
+		}
+	}
+
+	&__tip{
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: middle;
+		width: 13px;
+		height: 13px;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 13px;
+		text-align: center;
+		background-color: #328bc7;
+		color: #FFF;
+		border-radius: 50%;
+	}
+
+	&:hover{
+		.ind-pop-wrap{
+			opacity: 1;
+			visibility: visible;
+			transform: translate3d(0,0,0);
+		}
+	}
+}
+
+.ind-pop-wrap{
+	position: absolute;
+	z-index: 4;
+	top: ~"calc(100% + 4px)";
+	transition: all 0.3s ease;
+	opacity: 0;
+	visibility: hidden;
+	transform: translate3d(0,5px,0);
+}
+
+.ind-pop{
+	position: relative;
+	background: #FFF;
+	border-radius: 5px;
+	box-shadow: 2px 5px 24px 6px rgba(23, 43, 64, 0.15);
+
+	&:before{
+		content: '';
+		display: block;
+		width: 12px;
+		height: 12px;
+		background-color: #FFF;
+		position: absolute;
+		top: -4px;
+		left: 55px;
+		z-index: 4;
+		transform: rotate(45deg);
+	}
+
+
+	&__main{
+		padding: 15px 10px;
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__footer{
+		background-color: #f0f4f7;
+		padding: 15px 20px 15px 20px;
+		border-radius: 0 0 5px 5px;
+		white-space: nowrap;
+		font-size: 13px;
+		
+		a{
+			position: relative;
+			color: #328bc7;
+			transition: color 0.3s ease;
+
+			&:hover{
+				color: #3aa2e8;
+			}
+
+		}
+	}
+}
+
+.ind-pop-item{
+	padding: 0 10px;
+	text-align: center;
+	font-weight: 600;
+
+	&__val{
+		display: block;
+		font-size: 24px;
+		
+		&--green{
+			color: #32c736;
+		}
+		&--red{
+			color: #c73232;
+		}
+	}
+
+	&__descr{
+		white-space: nowrap;
+	}
+}
+
+.ind-pop-arrow{
+	display: inline-flex;
+	vertical-align: middle;
+	align-items: center;
+	justify-content: center;
+	width: 13px;
+	height: 13px;
+	line-height: 13px;
+	text-align: center;
+	background-color: #328bc7;
+	color: #FFF;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+//indicator
